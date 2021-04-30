@@ -1,14 +1,17 @@
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
+import ColorChangeButton from "./ColorChangeButton";
 function App() {
+  const [color, setColor] = useState("");
   return (
-    <div className="react-root">
+    <div className={`react-root ${color}`}>
       <div className="centered">
         <h1> Color Picker</h1>
-        <button className="red">Red</button>
-        <button className="blue">Blue</button>
-        <button className="yellow">Yellow</button>
+        {color}
+        <ColorChangeButton color="red" setColor={setColor} />
+        <ColorChangeButton color="blue" setColor={setColor} />
+        <ColorChangeButton color="yellow" setColor={setColor} />
       </div>
     </div>
   );
